@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latino Tours Cusco | Specializing in arrangements tours</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+    <style>
+        :root {
+            --primary-color: #f39c12; /* Naranja/Dorado para acentos */
+            --text-color: #333333;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+        }
+        /* Top Bar */
+        .top-bar {
+            background-color: #212529;
+            color: #fff;
+            font-size: 0.85rem;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .top-bar a:hover {
+            color: var(--primary-color);
+        }
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand img {
+            max-height: 60px;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #444 !important;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        /* Hero Carousel */
+        .carousel-item {
+            height: 70vh;
+            min-height: 400px;
+            background-color: #000;
+        }
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            opacity: 0.6; /* Overlay oscuro para que resalte el texto */
+        }
+        .carousel-caption {
+            bottom: 20%;
+            z-index: 10;
+        }
+        .carousel-caption h5 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+        .carousel-caption p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 25%;
+        }
+        /* Cards */
+        .tour-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .tour-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+        .tour-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-weight: 600;
+        }
+
+        .gallery-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.img-wrapper {
+  overflow: hidden;
+  height: 260px; /* Controla la altura uniforme de las fotos */
+}
+
+.gallery-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Evita que las imágenes se distorsionen */
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.08); /* Efecto suave de zoom al pasar el cursor */
+}
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: #bbb;
+            padding: 40px 0 20px;
+        }
+        footer .icons {
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        footer .icons:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar py-2 d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <a href="mailto:latinotourscusco@hotmail.com" class="me-4">
+                        <i class="fa-solid fa-envelope me-2"></i>latinotourscusco@hotmail.com
+                    </a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="tel:+51984939276">
+                        <i class="fa-brands fa-whatsapp me-2"></i>+51 984 939 276
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Latino Tours Cusco">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="traditionaltours.html">Traditional Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="adventuretours.html">Adventure</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perudestinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="touristcircuit.html">Circuits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="folklorefeast.html">Folklore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="spanish-school.html">Spanish School</a></li>
+                    <li class="nav-item"><a class="nav-link" href="social-programs.html">Social Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/backend/mostrar_articulos.php">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <header>
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="img/header-1-machupicchu.jpg" alt="Machu Picchu Tours">
+                    <div class="carousel-caption">
+                        <h5>Machu Picchu Tours</h5>
+                        <p class="d-none d-md-block">The best and safest way to discover Machu Picchu. Enjoy our 1-day tour at your own pace.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="img/header-2-rainbow-mountains.jpg" alt="Rainbow Mountains">
+                    <div class="carousel-caption">
+                        <h5>Rainbow Mountains</h5>
+                        <p class="d-none d-md-block">Hike through a vibrant green valley with magnificent views of snow-capped mountains.</p>
+                    </div>
+                </div>
+
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img src="img/header-3-moray.jpg" alt="Maras Moray">
+                    <div class="carousel-caption">
+                        <h5>MORAY PERÚ TOUR</h5>
+                        <p class="d-none d-md-block">This half day tour experience to Moray & Salt Mines, will take you off the beaten track to enjoy the stunning scenery of snow-capped mountains of the Andes.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="img/header-4-humantay.jpg" alt="Humantay Lake">
+                    <div class="carousel-caption">
+                        <h5>HUMANTAY LAKE</h5>
+                        <p class="d-none d-md-block">Humantay Lake Tour offers high altitude ecotourism in the mountains, in complicity with nature, witness this new experience in the Andes.</p>
+                    </div>
+                </div>
+
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section-padding bg-white text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="section-title">Latino Tours Cusco</h1>
+                    <h4 class="text-muted mb-4">"Welcome to the navel of the world"</h4>
+                    <p class="lead mb-4">We are a professional travel agency with more than 30 years of experience in tourism. Specializing in tour arrangements in the land of the Incas.</p>
+                    <p>
+                        Directed by 
+                        <a href="#" class="text-primary fw-bold text-decoration-none" data-bs-toggle="modal" data-bs-target="#directorModal">
+                            Lic. Francisco Astete Saavedra
+                        </a>, university professor of tourism and languages. We offer a professional staff, our own transportation, and selected tour guides in English, French, German, and Italian.
+                    </p>
+                    <p>
+                          We have our own transportation. Our office is located in the principal avenue of the city,  <a target="_blank" href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z/data=!4m5!3m4!1s0x0:0x1ff9639165290cb9!8m2!3d-13.5210487!4d-71.9762007"> <strong class="text-success"> Avenida El Sol, in front of the Koricancha (the temple of the sun).</strong> </a> It will be a pleasure serving you.
+                    </p>
+                    <p class="fst-italic text-muted mt-4">"Sustainable development of tourism is our concern."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tours Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Popular Tours in Cusco</h2>
+            </div>
+            
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+                <!-- Tour 1 -->
+                <div class="col">
+                    <a href="cusco-city-tours.html" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm tour-card">
+                            <img src="img/seccionone-city-tour-cusco.jpg" class="card-img-top" alt="Cusco City Tour">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">Cusco City Tour</h5>
+                                <p class="card-text text-muted small">Qoricancha, Sacsayhuaman, Puka Pukara, Tambomachay.</p>
+                                <p class="mb-0 fw-bold"><i class="fa-regular fa-clock me-2"></i>Daily: 2:00 pm - 6:00 pm</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Tour 2 -->
+                <div class="col">
+                    <a href="sacred-valley-inkas.html" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm tour-card">
+                            <img src="img/secccionone-sacred-valley-peru-tour.jpg" class="card-img-top" alt="Sacred Valley">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">Sacred Valley Tour</h5>
+                                <p class="card-text text-muted small">Pisaq Market, Urubamba, Ollantaytambo, Chinchero.</p>
+                                <p class="mb-0 fw-bold"><i class="fa-regular fa-clock me-2"></i>Daily: 9:00 am - 6:00 pm</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Tour 3 -->
+                <div class="col">
+                    <a href="marasmorayhalfday.html" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm tour-card">
+                            <img src="img/seccionone-salt-mines-tour-maras.jpg" class="card-img-top" alt="Maras and Moray">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">Maras & Moray</h5>
+                                <p class="card-text text-muted small">Green Terraces of Moray, and the salt mines of Maras.</p>
+                                <p class="mb-0 fw-bold"><i class="fa-regular fa-clock me-2"></i>Daily: 9:00 am - 6:00 pm</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+                <!-- Tour 1 -->
+                <div class="col">
+                    <a href="cusco-south-valley.html" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm tour-card">
+                            <img src="img/sectionone-south-valley-tour.jpg" class="card-img-top" alt="The South Valley Tour">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">The South Valley Tour</h5>
+                                <p class="card-text text-muted small">Andahuaylillas Church, Tipon, Pikillaqta and Raqchi.</p>
+                                <p class="mb-0 fw-bold"><i class="fa-regular fa-clock me-2"></i>Full day</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Tour 2 -->
+                <div class="col">
+                    <a href="salkantay-trek-cusco.html" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm tour-card">
+                            <img src="img/sectionone-salkantay-trek.jpg" class="card-img-top" alt="Salkantay Trek">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">Salkantay Trek 5 Days</h5>
+                                <p class="card-text text-muted small">Soraypampa, Chaullay, Sahuayaco, Santa Teresa, Aguas Calientes, Machu Picchu.</p>
+                                <p class="mb-0 fw-bold"><i class="fa-regular fa-clock me-2"></i>5 Days / 4 Nights</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Tour 3 -->
+                <div class="col">
+                    <a href="classic-inca-trail-4-days.html" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm tour-card">
+                            <img src="img/sectionone-4-day-inca-trail.jpg" class="card-img-top" alt="Classic Inca Trail">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">Classic Inca Trail 4 Days</h5>
+                                <p class="card-text text-muted small">Ollantaytambo, Dead Woman pass, Wiñaywayna, Sun gate, Machu Picchu</p>
+                                <p class="mb-0 fw-bold"><i class="fa-regular fa-clock me-2"></i>Full day</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="text-center">
+                <h2 class="section-title">Gallery</h2>
+            </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    
+    <!-- Imagen 1 -->
+    <div class="col">
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden gallery-card h-100">
+        <div class="img-wrapper">
+          <img src="/img/city2.JPG" class="img-fluid w-100 gallery-img" alt="Cusco City Experience">
+        </div>
+      </div>
+    </div>
+
+    <!-- Imagen 2 -->
+    <div class="col">
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden gallery-card h-100">
+        <div class="img-wrapper">
+          <img src="/img/rural1.jpg" class="img-fluid w-100 gallery-img" alt="Cusco Traditional Tour">
+        </div>
+      </div>
+    </div>
+
+    <!-- Imagen 3 -->
+    <div class="col">
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden gallery-card h-100">
+        <div class="img-wrapper">
+          <img src="/img/south2.jpg" class="img-fluid w-100 gallery-img" alt="Machu Picchu Treks">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <img src="/img/payment-logo.png" class="img-fluid mb-4" style="max-height: 40px;" alt="Modos de pago">
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.facebook.com/LatinoToursCusco" target="_blank" class="icons"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                        <a href="tel:+51984939276" class="icons"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+                        <a href="mailto:latinotourscusco@hotmail.com" class="icons"><i class="fa-solid fa-envelope fa-xl"></i></a>
+                        <a href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z" target="_blank" class="icons"><i class="fa-solid fa-location-dot fa-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mb-0 small">&copy; 2026 Latino Tours Cusco. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Director Modal -->
+    <div class="modal fade" id="directorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Lic. Francisco Astete Saavedra</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img class="img-fluid rounded-circle mb-3 shadow" src="/img/licenciado.jpg" alt="Francisco Astete Saavedra" style="width: 150px; height: 150px; object-fit: cover;">
+                    <p>University degree in tourism and a licensed professional in tourism.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1145 @@
+/*css made by JLCH */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+#errorpage{
+    background-color: #112020;
+}
+.errormessage{
+    color: #dbe6e2;
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+
+}
+#payments{
+    width: 45%;
+    margin-top:2rem ;
+    margin-bottom: 2rem;
+}
+.imgmodal{
+    width: 45% !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 7px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #303841;
+}
+::-webkit-scrollbar-track {
+  background: #b0b0b0;
+  border: 88px none #ffffff;
+  border-radius: 45px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #c4c4c4;
+}
+::-webkit-scrollbar-track:active {
+  background: #9e9e9e;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight:300 !important;
+    letter-spacing: 0.1rem;
+    
+}
+a, strong, p, h1, h2, h3, h4,h5,li,ul{
+    text-decoration: none !important;
+    color: rgb(44, 43, 43);
+}
+header{
+  max-width: 100% !important;
+  position: fixed;
+  z-index: 100;
+  padding: 0rem !important;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight:400;
+    letter-spacing: 0.1rem;
+}
+.row{
+    --bs-gutter-x: 0rem !important;
+    --bs-gutter-y: 0rem !important;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+.container-full{
+    width: 100% !important;
+}
+#superiorhead{
+    margin-top: 2rem;   
+  }
+.navmenu{
+    background-color: rgba(235, 235, 235, 0.9);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+.navmenuwhite{
+    background-color: #FEFEFB;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+.nav-link{
+    color: rgb(2, 2, 2) !important;
+    font-size: 1.1rem !important;
+    font-weight: 500;
+    display: block !important;
+    padding: 0.5rem 1rem !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+   
+}
+.nav-linkwhite{
+    color: black !important;
+    display: block;
+    font-weight: 500;
+    font-size: 1.1rem !important;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    
+}
+.nav-linkwhite:hover{
+    color: rgb(86, 100, 112) !important;
+}
+.nav-linkblack
+{
+    color: rgb(17, 17, 17) !important;
+}
+.nav-link:hover{
+    color: rgb(46, 46, 46) !important;
+}
+.nav-item{
+   margin-right: 1.4rem;
+}
+.datahead{
+    color: rgb(43, 42, 42);
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;   
+    text-decoration: none !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, font-size 0.50s ease-in-out;
+}
+.datahead:hover{
+    color: rgb(4, 54, 25);
+    font-size: 1.2rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, font-size 0.50s ease-in-out;
+
+}
+.dataheadwhite{
+    color: #078565;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;   
+    text-decoration: none !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, font-size 0.50s ease-in-out;
+}
+.dataheadwhite:hover{
+    color: #29a385;
+    font-size: 1.3rem;
+    font-weight: 400;
+    cursor: pointer;   
+    text-decoration: none !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, font-size 0.50s ease-in-out;
+}
+#slogan1{
+    font-size: 1.2rem;
+    font-weight: 600;    
+    color: #064939;
+    margin-bottom: 2.5rem;
+}
+#slogan2{
+    color: #08644d;
+    font-size: 1rem;
+    font-weight: 600;   
+}
+#slogan3{
+    color: #08644d;
+    font-size: 1rem;
+    font-weight: 600;   
+}
+#primarylogo{
+    width: 40%;
+}
+.logoresponsive{
+    width: 48%;
+    
+}
+.headresponsive{
+    min-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.flexrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flexcol{
+    display: flex;
+    flex-direction: column;
+    
+}
+#sectionlidehead{
+    max-width: 100% !important;
+    padding: 0;
+   
+}
+.imgfilter{
+    
+        -webkit-filter: brightness(53%);
+            filter: brightness(52%);
+}
+
+.titleslide{
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: rgb(243, 241, 241);
+}
+.textslide{
+    font-size: 1.3rem;
+    font-weight: 530;
+    color: rgb(243, 241, 241);
+
+}
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 25.25rem !important;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff !important;
+    text-align: center;
+}
+.carousel-indicators > button{
+    background-color: #fff !important;
+}
+#latinotours{
+    margin-top: 0rem;
+    padding-top: 19rem;
+    margin-bottom: 4rem;
+}
+.textlatino{
+    font-size: 1.3rem;
+}
+#populartours{
+  margin-top: 4rem;  
+  margin-bottom: 5rem;
+}
+.primarytitle{
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+#ourexperience{
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}
+
+#ruraltourism{
+    /*background-image: url('https://www.latinotourscusco.com/wp-content/uploads/2022/03/experiental-tourism.jpg');*/
+    
+    width: 100%;
+    
+   
+   
+}
+.img-contenedor{
+    position: relative;
+    display: inline-block;    
+    width:100% !important;
+    height:100%;
+    overflow:hidden;
+}
+.img-contenedor img {
+    -webkit-transition:all .9s ease; /* Safari y Chrome */
+    -moz-transition:all .9s ease; /* Firefox */
+    -o-transition:all .9s ease; /* IE 9 */
+    -ms-transition:all .9s ease; /* Opera */
+    width:100%;
+    height:100%;
+  
+    }
+    .img-contenedor:hover img {
+    -webkit-transform:scale(1.25);
+    -moz-transform:scale(1.25);
+    -ms-transform:scale(1.25);
+    -o-transform:scale(1.25);
+    transform:scale(1.25);
+    }
+   
+    
+
+.contact-icon{
+    font-size: 20px;
+    color: #FF9F1C;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #FF9F1C;
+    border-radius: 50%;
+    line-height: 50px;
+    
+    -webkit-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+}
+#imgcontent{
+    
+    overflow:hidden;
+}
+#ourexperienceone, #ourexperiencetwo{
+   
+    
+    overflow:hidden;
+}
+
+.contact-icon:hover{
+    color: #ffffff;
+    background-color: #FF9F1C;
+    font-size: 1.5rem !important;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.textimgcenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.textimgcenter:hover{
+    cursor: pointer;
+    
+    
+}
+.textimgleft{
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    
+}
+.textimgleftone{
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    
+}
+.imgexperience{
+    -webkit-filter: brightness(63%);
+    filter: brightness(62%);
+    cursor: pointer;
+}
+.imgexperience:hover{
+    -webkit-filter: brightness(43%);
+    filter: brightness(42%);
+    cursor: pointer;
+}
+#bestmapitour{
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+.mapitourstitle{
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    
+}
+.imgbestmapitour{
+    -webkit-filter: brightness(63%);
+    filter: brightness(62%);
+    cursor: pointer;
+}
+.imgbestmapitour:hover{
+    -webkit-filter: brightness(43%);
+    filter: brightness(42%);
+    cursor: pointer;
+}
+#ruraltourism{
+    padding: 0;
+}
+.imgruraltours{
+    width: 100% !important;   
+    padding: 0rem;
+    margin: 0rem;
+    -webkit-filter: brightness(53%);
+    filter: brightness(53%);
+}
+.imgruralcontainer{
+    position: relative;
+    display: inline-block;    
+    width:100% !important;
+    height:100%;
+   
+   
+}
+
+.textwiraco{
+    position: absolute;
+    left: 25%;
+    top: 40%;
+    width: 50%;
+}
+.titlewira{
+    color: #F4F4F4;
+    font-size: 2.8rem;
+    
+}
+.textwira{
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.wirarespsection{
+    display: none;    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 70%;
+}
+.textwiraresp{
+    font-weight:500 ;
+}
+
+.textruralcenter{
+    position: absolute;
+    top: 30%;
+    left: 34%;
+    
+    color: #ffffff;
+}
+#titleruraltours{
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: rgb(243, 241, 241);
+
+}
+#textruraltours{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(243, 241, 241);
+
+}
+#ouroffice{
+   
+    background-color: #F4F4F4;
+    
+    
+}
+#contact{
+    background-color: #F4F4F4;
+}
+#footer{
+    background-color: #F4F4F4;
+}
+
+.primarybutton
+{
+    background-color: #ff9c00 !important;
+    padding: 0.7em 1.5em;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 0.8rem;
+
+}
+.primarybutton:hover{
+    background-color: #cc8623 !important;
+    padding: 0.7em 1.5em;
+    border-color: #bd7b1f;
+    font-weight: 800;
+    color: #dad5cd;
+}
+.dateoffice
+{
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: rgb(44, 44, 44);
+    text-decoration: none !important;
+}
+.dateoffice:hover{
+    color: rgb(80, 77, 77);
+}
+#footer{
+    padding-top: 3rem;
+    
+}
+.icons{
+    color: #ff9c00 ;
+    margin-bottom: 2rem;
+    margin: 2rem;
+    cursor: pointer;
+}
+.icons:hover{
+    color: #c57b05 ;
+    
+    
+}
+.textstrong{
+    font-weight: 500;
+}
+
+#traditionaltours{
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+#img-head{
+    -webkit-filter: brightness(43%);
+    filter: brightness(42%);
+}
+.titlesecundary{
+    margin-bottom: 2rem;
+    color: #085c47;
+}
+.textsecundary{
+    text-align: justify;
+}
+.titletrip{
+    font-size: 1.1rem;
+    font-weight: 600;
+    
+}
+.texttrip{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.hourtrip{
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.tripsection{
+    background-color: #d9e0dc;
+    padding: 1rem;
+    border-radius: 20px;
+    margin: 0.8rem;
+    border: 1px solid #d6ddd9;
+    transition: border 1s;
+    transition: background-color 2s;
+    cursor: pointer;
+}
+.tripsection:hover{
+    border: 1px solid #078565;
+    background-color: #c9c5c5;
+    transition: background-color 2s;
+    transition: ease-in border 1s;
+}
+.contexttrip{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+   
+}
+.conttrip{
+    background-color: #dbe6e2;
+    border: 1px solid #112020;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+.fa-circle-check{
+    margin-right: 0.3rem;
+}
+
+.textall{
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+}
+.subtitleschool{
+    padding-left:1rem !important;
+}
+.listschool{
+    margin-left:1rem ;
+    margin-bottom: 3rem;    
+   list-style: none;
+}
+
+.itemschool{
+    text-decoration: none !important;
+    margin: 1rem;
+    font-size: 1rem;
+}
+.fa-circle-dot{
+    color: #064939;
+}
+.slogansocial{
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 1715px) {
+    .nav-link{
+        
+        font-size: 0.8rem !important;
+    }
+    .nav-linkwhite{
+        font-size: 0.8rem !important;
+
+    }
+    .carousel-caption{
+        top: 30%;
+    }
+    .cardtours{
+        width: 18rem !important;
+    }
+    .textstrong{
+        font-size: 0.7rem;
+    }
+    .padd1{
+        margin-bottom: 0.5rem !important;
+    }
+    .padd2{
+        margin-bottom: 1.5rem !important;
+    }
+    .padd3{
+        margin-bottom: 2.5rem !important;
+    }
+    .padd4{
+        margin-bottom: 3rem !important;
+    }
+    .padd5{
+        margin-bottom: 3.5rem !important;
+    }
+    .padd6{
+        margin-bottom: 4rem !important;
+    }
+    .padd7{
+        margin-bottom: 4.5rem !important;
+    }
+    .padd-epscal{
+        margin-bottom: 2.1rem !important;
+    }
+    #latinotours{
+        padding-top: 15rem !important;
+    }
+}
+
+@media (max-width: 1462px) {
+    .nav-link{
+        padding: 0.6rem !important;
+        font-size: 0.8rem !important;
+    }
+    .nav-linkwhite{
+        font-size: 0.8rem !important;
+        padding: 0.2rem !important;
+    }
+    .carousel-caption{
+        top: 30%;
+    }
+    .cardtours{
+        width: 18rem !important;
+    }
+    .textstrong{
+        font-size: 0.7rem;
+    }
+    .padd2{
+        margin-bottom: 4rem;
+    }
+    .textimgleft{
+        left: 30%;
+    }
+    .mapitourstitle{
+        font-size: 1.8rem;
+    }
+    .textimgleftone{
+        left: 18% !important;
+    }
+   
+}
+
+
+
+@media (max-width: 1350px) {
+    #head{
+        display: none;
+    }
+    .textimgcenter, .textimgleft, .mapitourstitle {
+        font-size: 1.4rem !important;
+    }
+    .textimgleftone{
+        font-size: 0.8rem ;
+        padding-left: 4rem;
+    }
+    
+    .headresponsive{
+        display: flex;
+    }
+    .collist{
+        width: 40%;
+    }
+    .flexrow2{
+        display: flex;
+        flex-direction:column !important;
+       
+    }
+    .flexcol2{
+        
+        width: 98%;
+    }
+    .nav-linkwhite{
+        margin-bottom: 0.4rem;
+    }
+    .logoresponsive{
+       width: 35%;
+    }
+    #latinotours{
+        padding-top: 10rem !important;
+    }
+   
+   
+}
+
+@media (max-width: 1220px) {
+    #firstrowpopular{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cardtours{
+      padding: 0rem;
+      margin: 0rem;
+      width: 35rem !important;
+    }
+    .colcard{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .titlecard{
+        font-size: 1.5rem;
+    }
+    .textcard{
+        font-size: 1.1rem;
+    }
+    .textstrong{
+        font-size: 1rem;
+    }
+    .textruralcenter{
+        left: 25%;
+    }
+    .columschool{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .logoresponsive{
+        width: 35%;
+     }
+   
+  
+   
+ 
+}
+@media (max-width: 1025px){
+    .textruralcenter{
+        left: 19%;
+    }
+    .dateoffice{
+        font-size: 0.8rem !important;
+    }
+    .titleslide{
+        font-size: 2rem;
+    }
+    .textslide{
+        font-size: 1rem;
+    }
+    .textimgleft{
+        font-size: 1rem;
+        padding-left: 7rem;
+    }
+    .mapitourstitle{
+        font-size: 1rem !important;
+    }
+    .coltrip{
+        width: 98% !important;
+        margin-bottom: 1.5rem !important;
+    }
+    #latinotours{
+        padding-top: 10rem !important;
+    }
+    .titlewira{
+        font-size: 2rem;
+    }
+    .textwira{
+        display: none;
+    }
+    .wirarespsection{
+        display: flex;        
+    }
+    
+}
+@media (max-width: 800px){
+    .textruralcenter{
+        left: 12%;
+        top: 20%;
+    }
+    .dateoffice{
+        font-size: 0.8rem !important;
+    }
+    .titleslide{
+        font-size: 1rem;
+    }
+    .textslide{
+        font-size: 0.8rem;
+    }
+    .d-none{
+        display: block !important;
+    }
+}
+@media (max-width: 768px){
+    .textruralcenter{
+        left: 24%;
+        top: 20%;
+    }
+    #titleruraltours{
+        font-size: 1.8rem !important;
+    }
+    #textruraltours{
+        font-size: 1rem;
+    }
+    .dateoffice{
+        font-size: 0.8rem !important;
+    }
+    .titleslide{
+        font-size: 1rem;
+    }
+    .textslide{
+        font-size: 0.8rem;
+    }
+    .d-none{
+        display: block !important;
+    }
+    .textimgcenter{
+        font-size: 0.8rem !important;
+    }
+    .textlatino{
+        font-size: 1.1rem;
+    }  
+    .textimgleftone{
+        font-size: 0.5rem;
+    }
+    .textimgleft{
+        font-size: 0.8rem !important;
+        width: 100%;
+    }
+    .mapitourstitle{
+        font-size: 0.8rem !important;
+    }
+    .rowlist{
+        display: flex;
+        flex-direction: column;
+    }
+    .collist{
+        width: 90%;
+    }
+    .flexcol2{
+        padding: 1rem !important;
+    }
+    .listschool{
+        padding: 0rem !important;
+    }
+    .slogansocial{
+        font-size: 1.2rem;
+    }
+    .textsocial{
+        width: 85%;
+    }
+
+}
+@media (max-width: 666px){
+   .colbanners{
+       width: 100% !important;
+   }
+   .textimgcenter{
+    font-size: 1.5rem !important;
+   }
+   .mapitourstitle{
+       font-size: 1.5rem !important;
+   }
+   .textimgleftone{
+       font-size: 0.8rem;
+   }
+   .textimgleft{
+    font-size: 1.5rem !important;
+
+   }
+   .cardtours{
+    padding: 0rem;
+    margin: 0rem;
+    width: 21rem !important;
+  }
+  .dateoffice{
+      margin-bottom: 0.1rem;
+  }
+  .listschool{
+    padding: 0rem !important;
+    margin: 0rem !important;
+}
+#latinotours{
+    padding-top: 10rem !important;
+}
+.logoresponsive{
+    width: 40%;
+ }
+ .padd7{
+    margin-bottom: 0rem !important;
+    }
+#payments{
+      width: 85% !important;
+  }      
+
+}
+@media (max-width: 520px){
+    .colbanners{
+        width: 100% !important;
+    }
+    .textimgcenter{
+     font-size: 1.5rem !important;
+    }
+    .mapitourstitle{
+        font-size: 1.5rem !important;
+    }
+    .textimgleftone{
+        font-size: 0.8rem;
+    }
+    .textimgleft{
+     font-size: 1rem !important;
+     
+ 
+    }
+    .textimgleftone{
+        padding-left: 6rem;
+        padding-bottom: 1rem;
+    }
+    .cardtours{
+     padding: 0rem;
+     margin: 0rem;
+     width: 21rem !important;
+   }
+   .dateoffice{
+       margin-bottom: 0.5rem !important;
+   }
+   #titleruraltours{
+    font-size: 1.3rem !important;
+   }
+   #textruraltours{
+       font-size: 0.8rem;
+   }
+   .primarybutton {
+       font-size: 0.8rem;
+   }
+   .textslide{
+       display: none;
+   }
+   #sectionlidehead{
+       padding-top: 3rem;
+   }
+
+ 
+   #slogan1, #slogan2
+   {
+       font-size: 0.9rem;
+   }
+    .textruralcenter{
+        left: 18%;
+        top: 13%;
+    }
+    .icons{
+        margin: 0.8rem;
+    }
+    .titlecard{
+        font-size: 1.2rem;
+    }
+    .textcard, .textstrong{
+        font-size: 0.9rem;
+    }
+    #superfooter{
+        font-size: 0.5rem;
+    }
+    .collist{
+        width: 98%;
+        margin: 0rem !important;
+        margin-bottom: 2rem !important;
+    }
+    .flexcol2{
+        padding: 0.2rem !important;
+    }
+    .rowicons{
+        justify-content: center !important;
+    }
+    .colicons{
+        width: 35%;
+        display: flex;
+        flex-direction: row;        
+        justify-content: center;
+        align-content: center;
+        font-size: 0.8rem;
+    }
+    .textall{
+        font-size: 1rem !important;
+    }
+    .subtitleschool{
+        font-size: 1.1rem;
+    }
+   .itemschool{
+       font-size: 0.9rem;
+   }
+   .tripsection{
+        margin-left: 0.1rem !important;
+        margin-right: 0.1rem !important;
+        margin-bottom: 2rem !important;
+   }
+   #sectiontriptico{
+       padding: 0rem !important;
+   }
+   .colintertrip{
+       width: 90% !important;
+   }
+   .titletrip{
+       font-size: 1.1rem;
+   }
+   #latinotours{
+    padding-top: 7rem !important;
+   }
+   .logoresponsive{
+        width: 52%;
+   }
+   .textwiraco{
+       width: 98%;
+       left: 0%;
+   }
+  .titlewira{
+      font-size: 1.5rem;      
+  }
+}
+@media (max-width: 400px){
+    .textruralcenter{
+        left: 18%;
+        top: 13%;
+    }
+    .icons{
+        margin: 0.7rem;
+    }
+    .titlecard{
+        font-size: 1.2rem;
+    }
+    .textcard, .textstrong{
+        font-size: 0.9rem;
+    }
+    #textruraltours{
+        display: none;
+    }
+    .textruralcenter{
+        left: 13%;
+    }
+    .mapitourstitle{
+        font-size: 1.2rem !important;
+    }
+    .slogansocial{
+        font-size: 1rem;
+    }
+    .textsocial{
+        width: 100%;
+    }
+
+}
+@media (max-width: 379px){
+    .textruralcenter{
+        left: 14% !important;
+        top: 13%;
+    }
+    .icons{
+        margin: 0.8rem;
+    }
+    .titlecard{
+        font-size: 1.2rem;
+    }
+    .textcard, .textstrong{
+        font-size: 0.9rem;
+    }
+    #textruraltours{
+        display: none;
+    }
+    .textruralcenter{
+        left: 7%;
+    }
+    .mapitourstitle{
+        font-size: 1.2rem !important;
+    }
+    .cardtours{
+        width: 18rem !important;
+    }
+    .textimgleftone{
+        display: none;
+    }
+
+}
+@media (max-width: 330px){
+    .textruralcenter{
+        left: 8% !important;
+        top: 13%;
+    }
+    #latinotours{
+        padding-top: 6rem !important;
+        }
+    .textwiraco{
+        width: 98%;
+        left: 2%;
+    }
+   
+
+}
