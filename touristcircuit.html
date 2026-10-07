@@ -4,897 +4,715 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/ratstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <title>Tourist Circuits of Cusco | Latino Tours Cusco</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff"> 
-    <title>Latino Tours</title>
+    
+    <style>
+        :root {
+            --primary-color: #f39c12;
+            --primary-hover: #d68910;
+            --dark-color: #212529;
+            --text-color: #333333;
+            --bg-light: #f8f9fa;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark-color);
+            color: #fff;
+            font-size: 0.85rem;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .top-bar a:hover {
+            color: var(--primary-color);
+        }
+        /* Sticky Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand img {
+            max-height: 65px;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #444 !important;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        /* Hero Banner */
+        .hero-banner {
+            position: relative;
+            height: 45vh;
+            min-height: 320px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('img/traditionaltours.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            text-transform: uppercase;
+        }
+        /* Section Titles */
+        .section-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -8px;
+            left: 25%;
+        }
+        /* Circuit Cards */
+        .circuit-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .circuit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12) !important;
+        }
+        .circuit-img-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .circuit-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .circuit-card:hover .circuit-img {
+            transform: scale(1.08);
+        }
+        .time-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background-color: rgba(33, 37, 41, 0.85);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+        .circuit-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .circuit-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .circuit-info {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .circuit-info p {
+            margin-bottom: 8px;
+        }
+        /* Contact Cards */
+        .contact-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .contact-box:hover {
+            transform: translateY(-5px);
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(243, 156, 18, 0.15);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #bbb;
+            padding: 40px 0 20px;
+        }
+        footer .icons {
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        footer .icons:hover {
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 <body>
-  
-  <header class="headresponsive">
-    <nav class="navbar-light bg-light p-2">
- 
-        <div class="flexrow">
-          <div class="flexcol">
-            <img src="img/logo.png" class="logoresponsive" alt="Latino Tours Cusco">
-          </div>
-          <div class="flexcol text-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>            
-          </div>
-         
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar py-2 d-none d-md-block">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <a href="mailto:latinotourscusco@hotmail.com" class="me-4">
+                        <i class="fa-solid fa-envelope me-2"></i>latinotourscusco@hotmail.com
+                    </a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="tel:+51984939276">
+                        <i class="fa-brands fa-whatsapp me-2"></i>+51 984 939 276
+                    </a>
+                </div>
+            </div>
         </div>
-        
-          
-        
-      
-      
-    </nav>
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-light p-4">
-      <!--  <h5 class="text-white h4">Collapsed content</h5> -->
-        <ul class="navbar-nav justify-content-center" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a  class="nav-linkwhite " aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite " href="traditionaltours.html">Traditional Tours</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite " href="adventuretours.html">Adventure Tours</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite " href="perudestinations.html">Peru Destinations</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite " href="touristcircuit.html">Tourist Circuits of Cusco</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-linkwhite " href="folklorefeast.html">Folklore Tours</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite" href="spanish-school.html">Spanish School</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-linkwhite" href="social-programs.html">Social Programs</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-linkwhite" href="/backend/mostrar_articulos.php">Blog</a>
-          </li>
-         <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Link
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          -->
-        </ul>
-      </div>
     </div>
-   
-  </header>
-    <header  class="container navmenu" id="head">
-       <div class="row justify-content-center g-0" id="superiorhead">
-                <div class="col-4 text-center">                 
-                    <p id="mail" class="datahead">  <i class="fa-solid fa-envelope"> </i> latinotourscusco@hotmail.com </p>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar navbar-expand-xl navbar-light sticky-top shadow-sm py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Latino Tours Cusco">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="traditionaltours.html">Traditional Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="adventuretours.html">Adventure Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="perudestinations.html">Perú Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="touristcircuit.html">Tourist Circuits of Cusco</a></li>
+                    <li class="nav-item"><a class="nav-link" href="folklorefeast.html">Folklore Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="spanish-school.html">Spanish School</a></li>
+                    <li class="nav-item"><a class="nav-link" href="social-programs.html">Social Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/backend/mostrar_articulos.php">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header Banner -->
+    <header class="hero-banner">
+        <div class="container">
+            <h1 class="hero-title">Tourist Circuits of Cusco</h1>
+            <p class="lead mb-0 fs-5">Comprehensive Excursion Catalog & Regional Maps</p>
+        </div>
+    </header>
+
+    <!-- Map Overview Section -->
+    <section class="container py-5 text-center">
+        <h2 class="section-title">Regional Circuit Map</h2>
+        <div class="row justify-content-center mt-3">
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden p-2 bg-white">
+                    <img src="img/mapa_2022.jpg" class="img-fluid rounded-3" alt="Circuits Tourism Cusco Map">
                 </div>
-                <div class="col-4 text-center">
-                    <img id="primarylogo" src="img/logo.png" alt="Latino Tours">
-                </div>
-                <div class="col-4 text-center">   
-                  <a href="tel:+51984939276" class="datahead">              
-                   <p id="phone" class="datahead"> <i class="fa-brands fa-whatsapp"></i> +51 984 939 276 </p>
-                  </a>
-                </div>
-       </div> 
-       <div class="row g-0">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid justify-content-center">
-                <div class="row ">
-                 
-                    <div class="col-12 text-center">
-                    
-                          <div class="collapse navbar-collapse" id="navbarScroll">
-                            <ul class="navbar-nav justify-content-center  navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                              <li class="nav-item">
-                                <a id="linkmenu1" class="nav-link " aria-current="page" href="index.html">Home</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu2" class="nav-link " href="traditionaltours.html">Traditional Tours</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu3" class="nav-link " href="adventuretours.html">Adventure Tours</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu4" class="nav-link " href="perudestinations.html">Peru Destinations</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu5" class="nav-link " href="touristcircuit.html">Tourist Circuits of Cusco</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu7" class="nav-link " href="folklorefeast.html">Folklore Tours</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu6" class="nav-link " href="spanish-school.html">Spanish School</a>
-                              </li>                             
-                              <li class="nav-item">
-                                <a id="linkmenu8" class="nav-link " href="social-programs.html">Social Programs</a>
-                              </li>
-                               <li class="nav-item">
-                                <a id="linkmenu9" class="nav-link " href="/backend/mostrar_articulos.php">Blog</a>
-                              </li>
-                             <!-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Link
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                  <li><a class="dropdown-item" href="#">Action</a></li>
-                                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                              </li>
-                              -->
-                            </ul>
-                           
-                          </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Circuits Catalog Section -->
+    <section class="container pb-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Available Tourist Circuits</h2>
+            <p class="text-muted">Explore our wide variety of daily cultural, historical, and adventure circuits across Cusco and Peru.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <!-- 1. City Tour -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic1.jpg" class="circuit-img" alt="City Tour Cusco">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>1:30 PM - 6:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">City Tour / Mirabus</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Cusco city, Koricancha, Cathedral, Sacsayhuamán, Q’enqo, Puka Pukara, Tambomachay.</p>
+                            <p><strong>Includes:</strong> Transportation & Professional Guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Entrance tickets.</p>
+                        </div>
                     </div>
                 </div>
-             
             </div>
-          </nav>
-       </div>    
-    </header>    
-    <section>
-      <img src="img/traditionaltours.jpg" id="img-head" class="img-fluid" alt="traditional tours in Cusco">
-    </section>
-   
-   
-    <section class="container-fluid" id="traditionaltours">
-      <div class="row justify-content-center g-0 text-center" id="firstrowpopular">
-        <h2 class="primarytitle">Tourist Circuits of Cusco</h2>
 
-          <div class="col-8 colcard ">
-           <img src="img/mapa_2022.jpg" class="img-fluid" alt="Circuits Tourism Cusco">
-          </div>
-       
-         
-
-      </div>
-    
-     
-    </section>
-    <section class="container-fluid" id="sectiontriptico">
-      <div class="row justify-content-center">
-        <div class="col-4 coltrip">
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">City Tour or seeing bus/ mira bus</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit:</strong> Cusco city, Koricancha, Cathedral, Sacsayhuaman, Q’enqo, Pumapucara, Tambomachay</p>   
-                <p class="texttrip"><strong> Includes:</strong> Transportation and Tour Guide</p>
-                <p class="texttrip"><strong> Not included:</strong> Entrance fee.</p>
+            <!-- 2. Sacred Valley -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic2.jpg" class="circuit-img" alt="Sacred Valley">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>7:30 AM - 6:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Sacred Valley of the Incas</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Pisac Market & Ruins, Urubamba, Ollantaytambo, Chinchero.</p>
+                            <p><strong>Includes:</strong> Tourist Transportation & Professional Guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Entrance tickets.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic1.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 1:30 pm to 6:00 pm</p>
-              </div>
-          </div>
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Sacred Valley of the Incas</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit: </strong> Pisac Market, Urubamba, Ollantaytambo, Chinchero </p>   
-                <p class="texttrip"><strong> Includes: </strong> Transportation and Tour Guide</p>
-                <p class="texttrip"><strong> Not included: </strong> Entrance fee.</p>
+
+            <!-- 3. Machu Picchu -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic3.jpg" class="circuit-img" alt="Machu Picchu">
+                        <span class="time-badge"><i class="fa-solid fa-calendar-day me-1"></i>Daily Departures</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Machu Picchu Full Day</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Hotel transfers, round-trip train & bus tickets, entry ticket, professional guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Meals / Lunch.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic2.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 7:30 am to 6:00 pm</p>
-              </div>
-          </div>
 
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Machupicchu</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong> Transfer HTL / Train station / HTL Bus and Train tickets round trip. Bus tickets up and down entrance fee, tour guide</p>
-                <p class="texttrip"><strong> Not included: </strong> Lunch</p>
+            <!-- 4. South Valley -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic4.jpg" class="circuit-img" alt="South Valley">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>8:30 AM - 2:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">South Valley Tour</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Tipón (water temple), Piquillacta (pre-Inca city), Andahuaylillas Chapel.</p>
+                            <p><strong>Includes:</strong> Transportation & Tour Guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Entrance tickets.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic3.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>
-              </div>
-          </div>
 
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">South Valley</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit: </strong> Tipon, Piquillacta, Andahuaylillas </p>   
-                <p class="texttrip"><strong> Includes: </strong>Transportation and tour guide</p>
-                <p class="texttrip"><strong> Not included: </strong> Entrance fee</p>
+            <!-- 5. Maras & Moray -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic5.jpg" class="circuit-img" alt="Moray - Maras">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>8:30 AM - 2:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Moray - Maras Salt Mines</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Circular Incan Agricultural Terraces of Moray & Maras Salt Ponds.</p>
+                            <p><strong>Includes:</strong> Transportation & Tour Guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Entrance tickets.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic4.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 8:30 am to 2:00 pm</p>
-              </div>
-          </div>
 
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Moray - Maras Tour</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit: </strong> Green Terrace of Moray and the salt mines</p>   
-                <p class="texttrip"><strong> Includes: </strong>Transportation and tour guide</p>
-                <p class="texttrip"><strong> Not included: </strong> Entrance fee</p>
+            <!-- 6. Super Sacred Valley -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic6.jpg" class="circuit-img" alt="Super Sacred Valley">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>7:00 AM - 6:30 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Super Sacred Valley Tour</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Chinchero, Maras Salt Ponds, Moray Terraces, Ollantaytambo, Pisac.</p>
+                            <p><strong>Includes:</strong> Full Day Transportation & Tour Guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Entrance tickets.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic5.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 8:30 am to 2:00 pm</p>
-              </div>
-          </div>
 
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Super Sacred Valley of the Incas Tour</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit: </strong> Chinchero, Maras, Ollantaytambo, Pisaq</p>   
-                <p class="texttrip"><strong> Includes: </strong>Transportation and tour guide</p>
-                <p class="texttrip"><strong> Not included: </strong> Entrance fee</p>
+            <!-- 7. Inca Trail -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic7.jpg" class="circuit-img" alt="Inca Trail">
+                        <span class="time-badge"><i class="fa-solid fa-mountain-sun me-1"></i>4 Days / 3 Nights</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Classic Inca Trail</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Private bus to trailhead, return train, trail permits, full meals (3B/3L/3D), porters, tents & guide.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic6.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 7:00 am to 6:30 pm</p>
-              </div>
-          </div>
 
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Inca Trail To Machupicchu</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Private Bus to the trail head, Train return to Cusco, Entrance to Inca Trail and Machupicchu, good food(3B, L, D) Porters to carry the tents and food, tent, maltress, tour guide</p>
-                
+            <!-- 8. Arequipa & Colca Canyon -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-arequipa.jpg" class="circuit-img" alt="Arequipa Colca Canyon">
+                        <span class="time-badge"><i class="fa-solid fa-bus me-1"></i>Multi-Day Tour</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Cusco - Arequipa - Colca Canyon</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Bus/Flight tickets, Arequipa City Tour, Santa Catalina Monastery, Colca Canyon (2D/1N) & Hotel.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic7.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: 4 days / 3 nights</p>
-              </div>
-          </div>
 
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Tour Cusco - Arequipa - Colca Canyon</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                  <p class="texttrip"><strong>Bus</strong> <strong> - Air tickets </strong> </p>   
-                  <p class="texttrip"><strong>City Tour -</strong> <strong>  Santa Catalina</strong> </p>   
-                  <p class="texttrip"><strong>Colca Canyon (2D/1N)</strong></p>
-                  <p class="texttrip"><strong>Hotel in Arequipa</strong></p>   
-
-
+            <!-- 9. Nazca & Paracas -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-nazca1.jpg" class="circuit-img" alt="Nazca Paracas">
+                        <span class="time-badge"><i class="fa-solid fa-plane me-1"></i>Multi-Day Expedition</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Nazca - Ica - Paracas</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Intercity bus tickets, Flight over Nazca Lines, Ballestas Islands boat tour, Nazca-Paracas (2D/1N) & Hotel.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-arequipa.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>
-              </div>
-          </div>
 
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Tour Cusco - Nazca - Ica - Pisco - Paracas</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                  <p class="texttrip"><strong>Bus</strong> <strong> - Cusco - </strong> <strong> Nazca - </strong> <strong>Lima</strong> </p>   
-                  <p class="texttrip"><strong>Bus</strong> <strong> - Lima - </strong> <strong> Nazca - </strong> <strong>Lima</strong> </p>   
-                  <p class="texttrip"><strong>Nazca Lines </strong> </p>   
-                  <p class="texttrip"><strong>Ballestas Islands</strong></p>
-                  <p class="texttrip"><strong>Tour Nazca - </strong> <strong> Paracas(2D/1N)</strong></p>   
-                  <p class="texttrip"><strong>Hotel Nazca - </strong> <strong> Paracas</strong></p>
-
-
+            <!-- 10. Horseback Riding -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic8.jpg" class="circuit-img" alt="Horseback Riding">
+                        <span class="time-badge"><i class="fa-solid fa-horse me-1"></i>Half Day / Daily</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Horseback Riding Excursion</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Scenic trails around Sacsayhuamán Archaeological Park.</p>
+                            <p><strong>Includes:</strong> Horses, equestrian gear, transportation & tour guide.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-nazca1.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
             </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>
-              </div>
-          </div>
+
+            <!-- 11. River Rafting -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic9.jpg" class="circuit-img" alt="River Rafting">
+                        <span class="time-badge"><i class="fa-solid fa-water me-1"></i>Full Day / Daily</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Urubamba River Rafting</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Transport, safety rafting gear, professional guides & lunch.</p>
+                            <p class="text-muted"><em>Bring change of clothes, windbreaker, towel & sandals.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Humantay Lake -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic10.jpg" class="circuit-img" alt="Humantay Lake">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>5:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Humantay Glacial Lake</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Tourist transport, breakfast, buffet lunch, entrance fees & trekking guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Mountain Biking -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic11.jpg" class="circuit-img" alt="Mountain Biking">
+                        <span class="time-badge"><i class="fa-solid fa-bicycle me-1"></i>Half / Full Day</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Mountain Biking Adventures</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Trails around Cusco and the Sacred Valley of the Incas.</p>
+                            <p><strong>Includes:</strong> Full support vehicle, mountain bike, helmet, gloves & repair kit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Vinicunca Rainbow Mountain -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="/img/triptico-pic12.jpg" class="circuit-img" alt="Vinicunca Rainbow Mountain">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>5:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Vinicunca Rainbow Mountain</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Tourist transportation, breakfast, buffet lunch, entrance fee & guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15. Palccoyo Rainbow Mountain -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="/img/triptico-pic13.jpg" class="circuit-img" alt="Palccoyo Rainbow Mountain">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>4:30 AM - 5:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Palccoyo Alternative Rainbow Mountain</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Transport, breakfast, buffet lunch, stone forest visit, entry fees & guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Waqrapukara -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="/img/triptico-pic14.jpg" class="circuit-img" alt="Waqrapukara Fortress">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>4:30 AM - 6:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Waqrapukara Inca Fortress</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Transportation, breakfast, lunch box, entrance fee & mountain guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. Lake Titicaca / Puno to La Paz -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="/img/triptico-puno.jpg" class="circuit-img" alt="Puno Copacabana La Paz">
+                        <span class="time-badge"><i class="fa-solid fa-route me-1"></i>Multi-Day Route</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Cusco - Puno - Copacabana - La Paz</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Buses/train to Puno, Uros Floating Islands, Taquile, Sillustani, Copacabana transfers & hotels.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. Q'eswachaca Bridge -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic15.jpg" class="circuit-img" alt="Qeswachaca Bridge">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>4:30 AM - 5:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Q'eswachaca Woven Inca Bridge</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Transportation, breakfast, lunch, entrance fee & cultural tour guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19. Ausangate 7 Lagoons -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic16.jpg" class="circuit-img" alt="Ausangate 7 Lagoons">
+                        <span class="time-badge"><i class="fa-solid fa-clock me-1"></i>4:30 AM - 6:00 PM</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Ausangate 7 Lagoons Trek</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Transportation, breakfast, lunch & mountain guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Community entrance fee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20. Chonta Condor Canyon -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic17.jpg" class="circuit-img" alt="Chonta Condor Canyon">
+                        <span class="time-badge"><i class="fa-solid fa-feather me-1"></i>Full Day / Daily</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">Chonta Condor Canyon</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>Includes:</strong> Private transport, entrance fee, viewing lookout hike & bilingual guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21. ATV Quad Biking + Zip Line -->
+            <div class="col">
+                <div class="circuit-card">
+                    <div class="circuit-img-wrapper">
+                        <img src="img/triptico-pic18.jpg" class="circuit-img" alt="Quad Biking Zip Line">
+                        <span class="time-badge"><i class="fa-solid fa-bolt me-1"></i>Half Day / Daily</span>
+                    </div>
+                    <div class="circuit-body">
+                        <h3 class="circuit-title">ATV Quad Biking + Zip Line</h3>
+                        <div class="circuit-info mt-auto">
+                            <p><strong>We Visit:</strong> Maras Salt Mines & Moray Terraces via ATV trails.</p>
+                            <p><strong>Includes:</strong> Quad bike rental, zip line gear, helmets, safety briefing & guide.</p>
+                            <p class="text-danger mb-0"><strong>Not Included:</strong> Entrance tickets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <div class="col-4 coltrip">
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Horse Back Riding</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit: </strong> Around the Archeological park of Sacsayhuaman</p>   
-                <p class="texttrip"><strong> Includes: </strong>Transportation and tour guide</p>
-               
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic8.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>
-              </div>
-          </div>
-
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">River Rafting</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit: </strong> Around the Archeological park of Sacsayhuaman</p>   
-                <p class="texttrip"><strong> Includes: </strong>Transportation and tour guide, rafting equipment, Lunch. You should bring extra cloths for changes, T-shirt, wind breaker, shorts, sandals, cap, towl, water and others</p>
-               
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic9.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>
-              </div>
-          </div>
-
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Humantay Lake</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-               
-                <p class="texttrip"><strong> Includes: </strong>Transportation, basic, breakfast, lunch buffet, entrance fee, tour guide</p>
-                
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic10.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 5:00 am to 5:00 pm </p>
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Mountain Biking</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> We Visit: </strong> Half and full day trips around Cusco and the Sacred Valley of the incas</p>   
-                <p class="texttrip"><strong> Includes: </strong>Full support, tour guide, repair kit, helmetsm gloves</p>
-                
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic11.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Vinicunca Rainbow Mountain</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation basic, breakfast, lunch buffet entrance fee, tour guide</p>
-                
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="/img/triptico-pic12.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 5:00 am to 5:00 pm</p>                
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Pallcoyo: Rainbow Mountain</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation basic, breakfast, lunch buffet entrance fee, tour guide</p>
-                
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="/img/triptico-pic13.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 4:30 am to 5:00 pm</p>                
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Waqra Pucara</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation basic, breakfast, lunch, entrance fee, tour guide</p>
-                
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="/img/triptico-pic14.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 4:30 am to 6:00 pm</p>                
-              </div>
-          </div>
-
-          
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Tour Cusco - Puno - Copacabana - La Paz</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong>Bus </strong> <strong> - Train to Puno - </strong> <strong> Flight to Juliaca </strong> </p>   
-                <p class="texttrip"><strong>Uros </strong> <strong> - Floating island (half day) - </strong> </p>   
-                <p class="texttrip"><strong>Sillustani (half day) </strong></p>   
-                <p class="texttrip"><strong>Uros </strong> <strong> - Taquile island (all day) </strong> </p>   
-                <p class="texttrip"><strong>Uros </strong> <strong> - Taquile - </strong> <strong> Amantani(2D/1N)</strong> </p>   
-                <p class="texttrip"><strong>Bus Cusco</strong> <strong> - Puno - </strong> <strong> Copacabana - </strong> <strong> La Paz</strong></p>
-                <p class="texttrip"><strong>Hotel in Puno</strong> <strong> - Copacabana - </strong> <strong> La Paz</strong></p>
-
-                  
-              </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="/img/triptico-puno.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>
-              </div>
-          </div>
-         
-
-
-        </div>
-        <div class="col-4 coltrip">
-      
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Q'eswachaca Inca Bridge</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation basic, breakfast, lunch, entrance fee, tour guide</p>
-                
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic15.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 4:30 am to 5:00 pm</p>                
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Ausangate 7 Lagoons</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation, basic breakfast and lunch</p>
-                <p class="texttrip"><strong> Not included: </strong> Entrance fee</p>
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic16.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 4:30 am to 6:00 pm</p>                
-              </div>
-          </div>
-
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Chonta Condor Canyon</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation, entrance fee, tour guide</p>
-                  
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic17.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>                
-              </div>
-          </div>
-
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Quad Biking + Zip Line (Maras - Moray)</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Full support equipment, helmets, tour guide</p>
-                <p class="texttrip"><strong> Not included: </strong> Entrance fee</p>
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic18.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 7:30 am to 1:00 pm / 1:00 pm to 6:00 pm</p>                
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Bungee Jumping</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation, safety equipment and especialized instructor</p>
-                
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic19.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 7:00 am to 12:00 pm</p>                
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Morada de los Dioses</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Transportation, entrance fee, tour guide</p>
-               
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic20.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: From 7:00 am to 12:00 pm</p>                
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Mistic Esoteric Tours</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                <p class="texttrip"><strong> Includes: </strong>Programs offering direct meeting with the Andean mystic tradition in different religious centers</p>
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic21.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily</p>                
-              </div>
-          </div>
-
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Wiracochan Valley Tour</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                  <p class="texttrip"><strong> We Visit:</strong>Huacarpay lagoon, Rumicolca incan site ,museum and andean chapel of Andahuaylillas and the Wiracochan valley with the sacred geography from the interpretation center.</p>   
-                  <p class="texttrip"><strong> Includes:</strong> Transportation and Tour Guide</p>
-                  <p class="texttrip"><strong> Not included:</strong> Entrance fee.</p>
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic22.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                <p class="hourtrip">Daily: from 8:00 am to 3:00 pm</p>                
-              </div>
-          </div>
-
-          
-          <div class="row justify-content-center  mt-5 tripsection">
-            <div class="conttrip">
-              <h2 class="titletrip p-2">Jungle Trips - Ask our programs</h2>
-            </div>  
-            <div class="row justify-content-center mt-3">
-              <div class="col-5 colintertrip" >
-                <div class="contexttrip">  
-                  <p class="texttrip"><strong> 1: Manu National Park </strong></p>
-                  <p class="texttrip"><strong> Lodge </strong> <strong> - Days -</strong> <strong> Fligth </strong>  </p>
-                  <p class="texttrip"><strong> 2: Tambopata - Candamo - Reserved Zone </strong></p>
-                  <p class="texttrip"><strong> Lodge</strong> <strong>- Days - </strong> <strong> Fligth </strong>  </p>
-                  <p class="texttrip"><strong> 3: Puerto Maldonado </strong></p>
-                  <p class="texttrip"><strong> Lodge</strong> <strong> - Days - </strong> <strong> Fligth </strong>  </p>
-
-              
-                </div>
-              </div>  
-           
-              <div class="col-5 m-1 colintertrip">
-                  <img src="img/triptico-pic23.jpg" class="img-fluid imgtrip" alt="city tour cusco">
-              </div>
-            </div>
-              <div class="row justify-content-center text-center">
-                           
-              </div>
-          </div>
-
-
-
-
-         
-        </div>
-      </div>
     </section>
 
-    
-    <section class="container-fluid " id="ouroffice">
-     
-        
-      
-      <div class="row justify-content-center text-center pb-5">
-        <div class="row justify-content-center" id="payments">
-          <img src="/img/payment-logo.png" class="img-fluid" alt="modos de pago ">
+    <!-- Contact & Office Info Section -->
+    <section class="container my-5 py-4">
+        <div class="text-center mb-5">
+            <img src="/img/payment-logo.png" class="img-fluid mb-4" style="max-height: 40px;" alt="Modos de pago">
+            <h2 class="section-title">Have Questions?</h2>
         </div>
-        <h2 class="primarytitle">Question ?</h2>
-        <div class="col-4 colbanners">
-          <a href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z/data=!4m5!3m4!1s0x0:0x1ff9639165290cb9!8m2!3d-13.5210487!4d-71.9762007" target="_blank">
-          <div class="row justify-content-center padd3">
-            <div class="contact-icon">
-              <i class="fa-solid fa-map-location-dot"></i>          
-            </div>
-            <strong class="dateoffice">Our Office</strong>
-            <strong class="dateoffice">Avenida El Sol 526 - B, Cusco - Perú</strong>
-          </div>
-          </a> 
-        </div>
-        <div class="col-4 colbanners">
-          <a href="tel:+51984939276">
-          <div class="row justify-content-center padd3">
-            <div class="contact-icon">
-              <i class="fa-solid fa-phone"></i>
-              
-            </div>
-              <strong class="dateoffice">Contact Number</strong>
-              <strong class="dateoffice">+51 984 939 276</strong>
-          </div>
-          </a>
-        </div>
-        <div class="col-4 colbanners">
-          <div class="row justify-content-center padd3">
-          <div class="contact-icon">
-            <i class="fa-solid fa-envelope"></i>        
-          </div>
-          <strong class="dateoffice">Email Us</strong>
-          <strong class="dateoffice">latinotourscusco@hotmail.com</strong>
-        </div>
-        </div>
-      </div>
-    </div>
-    </section>
 
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <a href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z" target="_blank" class="text-decoration-none text-dark">
+                    <div class="contact-box text-center shadow-sm border">
+                        <div class="contact-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h5 class="fw-bold">Our Office</h5>
+                        <p class="text-muted small mb-0">Avenida El Sol 526 - B, Cusco - Perú</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="tel:+51984939276" class="text-decoration-none text-dark">
+                    <div class="contact-box text-center shadow-sm border">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <h5 class="fw-bold">Contact Number</h5>
+                        <p class="text-muted small mb-0">+51 984 939 276</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="mailto:latinotourscusco@hotmail.com" class="text-decoration-none text-dark">
+                    <div class="contact-box text-center shadow-sm border">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <h5 class="fw-bold">Email Us</h5>
+                        <p class="text-muted small mb-0">latinotourscusco@hotmail.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-    <section class="container-fluid" id="contact">
+        <!-- Contact Form -->
         <div class="row justify-content-center">
-          <div class="col-12 text-center">
-            <h2 class="primarytitle">Contact us</h2>
-          </div>
-
-        </div>
-    
-       <div class="row justify-content-center">
-          <div class="col-6 colbanners">
-            <form action="">
-              <div class="mb-3">
-               
-                <input type="text" class="form-control" id="fullname"  placeholder="Full Name" required>
-              </div>
-              <div class="mb-3">
-                
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-              </div>
-              <div class="mb-3">
-             
-                <input type="text" class="form-control" id="subject" placeholder="subject" required>
-              </div>
-              <div class="mb-3">
-                
-                <textarea class="form-control" id="message" placeholder="Your message" rows="4" required></textarea>
-              </div>
-              <div class="row pb-5">
-                <div class="col-12 text-center ">
-                  <button type="submit" class="btn btn-warning primarybutton mt-3">Send Message</button>
+            <div class="col-lg-8">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+                    <h3 class="text-center fw-bold mb-4">Contact Us</h3>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-lg fs-6" placeholder="Full Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-lg fs-6" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control form-control-lg fs-6" placeholder="Subject" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control form-control-lg fs-6" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-warning btn-lg px-5 text-white fw-bold">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-              </div>
-            </form>
-          </div>
-       </div> 
-      
+            </div>
+        </div>
     </section>
 
-
-
-    <footer class="footer" id="footer">
-       <div class="row justify-content-center">
-        
-         <div class="col text-center">
-          <a href="https://www.facebook.com/LatinoToursCusco" target="_blank"> <i class="fa-brands fa-facebook-f  fa-2xl p-2 icons"></i></a>
-          <a href="tel:+51984939276"><i class="fa-brands fa-whatsapp  fa-2xl p-2 icons"></i></a>
-          <i class="fa-solid fa-envelope  fa-2xl p-2 icons"></i>
-          <a href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z/data=!4m5!3m4!1s0x0:0x1ff9639165290cb9!8m2!3d-13.5210487!4d-71.9762007" target="_blank"><i class="fa-solid fa-location-dot  fa-2xl p-2 icons"></i></a>
-          </div>
-
-       </div>
-      <div class="row justify-content-center text-center">
-      <small id="superfooter">Copyright © 2018 - 2022 | Latino Tours Cusco. All rights reserved</small>
-      </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.facebook.com/LatinoToursCusco" target="_blank" class="icons"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                        <a href="tel:+51984939276" class="icons"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+                        <a href="mailto:latinotourscusco@hotmail.com" class="icons"><i class="fa-solid fa-envelope fa-xl"></i></a>
+                        <a href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z" target="_blank" class="icons"><i class="fa-solid fa-location-dot fa-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mb-0 small">&copy; 2026 Latino Tours Cusco. All rights reserved.</p>
+        </div>
     </footer>
 
-
-<script src="js/bootstrap.js"></script>
-<script src="js/bootsrat.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
