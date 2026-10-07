@@ -188,15 +188,15 @@
     <!-- Sticky Navbar -->
     <nav class="navbar navbar-expand-xl navbar-light sticky-top shadow-sm py-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo.png" alt="Latino Tours Cusco">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo.png" alt="Latino Tours Cusco">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-                    <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../traditionaltours.html">Traditional Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="../adventuretours.html">Adventure Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="../perudestinations.html">Perú Destinations</a></li>
@@ -204,7 +204,7 @@
                     <li class="nav-item"><a class="nav-link" href="../folklorefeast.html">Folklore Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="../spanish-school.html">Spanish School</a></li>
                     <li class="nav-item"><a class="nav-link" href="../social-programs.html">Social Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/backend/mostrar_articulos.php">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link  active" href="/backend/mostrar_articulos.php">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -215,14 +215,14 @@
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="img/header-1-machupicchu.jpg" alt="Machu Picchu Tours">
+                    <img src="../img/header-1-machupicchu.jpg" alt="Machu Picchu Tours">
                     <div class="carousel-caption">
                         <h5>Machu Picchu Tours</h5>
                         <p class="d-none d-md-block">The best and safest way to discover Machu Picchu. Enjoy our 1-day tour at your own pace.</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <img src="img/header-2-rainbow-mountains.jpg" alt="Rainbow Mountains">
+                    <img src="../img/header-2-rainbow-mountains.jpg" alt="Rainbow Mountains">
                     <div class="carousel-caption">
                         <h5>Rainbow Mountains</h5>
                         <p class="d-none d-md-block">Hike through a vibrant green valley with magnificent views of snow-capped mountains.</p>
@@ -230,7 +230,7 @@
                 </div>
 
                   <div class="carousel-item" data-bs-interval="5000">
-                    <img src="img/header-3-moray.jpg" alt="Maras Moray">
+                    <img src="../img/header-3-moray.jpg" alt="Maras Moray">
                     <div class="carousel-caption">
                         <h5>MORAY PERÚ TOUR</h5>
                         <p class="d-none d-md-block">This half day tour experience to Moray & Salt Mines, will take you off the beaten track to enjoy the stunning scenery of snow-capped mountains of the Andes.</p>
@@ -238,7 +238,7 @@
                 </div>
 
                 <div class="carousel-item" data-bs-interval="5000">
-                    <img src="img/header-4-humantay.jpg" alt="Humantay Lake">
+                    <img src="../img/header-4-humantay.jpg" alt="Humantay Lake">
                     <div class="carousel-caption">
                         <h5>HUMANTAY LAKE</h5>
                         <p class="d-none d-md-block">Humantay Lake Tour offers high altitude ecotourism in the mountains, in complicity with nature, witness this new experience in the Andes.</p>
@@ -350,7 +350,7 @@ echo   '        <div class="col-4 justify-content-center colbanners"  id="imgcon
       
       <div class="row justify-content-center text-center pb-5">
         <div class="row justify-content-center" id="payments">
-          <img src="/img/payment-logo.png" class="img-fluid" alt="modos de pago ">
+          <img src="../img/payment-logo.png" class="img-fluid" alt="modos de pago ">
         </div>
         <h2 class="primarytitle">Question ?</h2>
         <div class="col-4 colbanners">
@@ -430,24 +430,27 @@ echo   '        <div class="col-4 justify-content-center colbanners"  id="imgcon
 
 
 
-    <footer class="footer" id="footer">
-       <div class="row justify-content-center">
-        
-         <div class="col text-center">
-          <a href="https://www.facebook.com/LatinoToursCusco" target="_blank"><i class="fa-brands fa-facebook-f  fa-2xl p-2 icons"></i></a>
-          <a href="tel:+51984939276"><i class="fa-brands fa-whatsapp  fa-2xl p-2 icons"></i></a>
-          <i class="fa-solid fa-envelope  fa-2xl p-2 icons"></i>
-          <a href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z/data=!4m5!3m4!1s0x0:0x1ff9639165290cb9!8m2!3d-13.5210487!4d-71.9762007" target="_blank"><i class="fa-solid fa-location-dot  fa-2xl p-2 icons"></i></a>
-          </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                              <img src="../img/payment-logo.png" class="img-fluid mb-4" style="max-height: 40px;" alt="Modos de pago">
 
-       </div>
-      <div class="row justify-content-center text-center">
-      <small id="superfooter">Copyright © 2018 - 2022 | Latino Tours Cusco. All rights reserved</small>
-      </div>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.facebook.com/LatinoToursCusco" target="_blank" class="icons"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                        <a href="tel:+51984939276" class="icons"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+                        <a href="mailto:latinotourscusco@hotmail.com" class="icons"><i class="fa-solid fa-envelope fa-xl"></i></a>
+                        <a href="https://www.google.com/maps/place/Latino+Tours/@-13.5210487,-71.9762007,15z" target="_blank" class="icons"><i class="fa-solid fa-location-dot fa-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="mb-0 small">&copy; 2026 Latino Tours Cusco. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://latinotourscusco.com/js/bootstrap.js"></script>
-<script src="https://latinotourscusco.com/js/bootsrat.js"></script>
 </body>
 </html>
