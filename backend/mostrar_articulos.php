@@ -4,177 +4,262 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/ratstrapp.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://latinotourscusco.com/js/bootstrap.js"></script>
-    <script src="https://latinotourscusco.com/js/bootsrat.js"></script>
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <title>Latino Tours Cusco | Specializing in arrangements tours</title>
     
-    <title>Latino Tours</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+    <style>
+        :root {
+            --primary-color: #f39c12; /* Naranja/Dorado para acentos */
+            --text-color: #333333;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+        }
+        /* Top Bar */
+        .top-bar {
+            background-color: #212529;
+            color: #fff;
+            font-size: 0.85rem;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .top-bar a:hover {
+            color: var(--primary-color);
+        }
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand img {
+            max-height: 65px;
+        }
+        .nav-link {
+            font-weight: 500 !important;
+            color: #444 !important;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        /* Hero Carousel */
+        .carousel-item {
+            height: 70vh;
+            min-height: 400px;
+            background-color: #000;
+        }
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            opacity: 0.6; /* Overlay oscuro para que resalte el texto */
+        }
+        .carousel-caption {
+            bottom: 20%;
+            z-index: 10;
+        }
+        .carousel-caption h5 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+        .carousel-caption p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 25%;
+        }
+        /* Cards */
+        .tour-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .tour-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+        .tour-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .card-title {
+            font-weight: 600;
+        }
+
+        .gallery-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.img-wrapper {
+  overflow: hidden;
+  height: 260px; /* Controla la altura uniforme de las fotos */
+}
+
+.gallery-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Evita que las imágenes se distorsionen */
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.08); /* Efecto suave de zoom al pasar el cursor */
+}
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: #bbb;
+            padding: 40px 0 20px;
+        }
+        footer .icons {
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        footer .icons:hover {
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 <body>
-  <header class="headresponsive">
-    <nav class="navbar-light bg-light p-2">
- 
-        <div class="flexrow">
-          <div class="flexcol">
-            <img src="/img/logo.png" class="logoresponsive" alt="Latino Tours Cusco">
-          </div>
-          <div class="flexcol text-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>            
-          </div>
-          
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar py-2 d-none d-md-block">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <a href="mailto:latinotourscusco@hotmail.com" class="me-4">
+                        <i class="fa-solid fa-envelope me-2"></i>latinotourscusco@hotmail.com
+                    </a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="tel:+51984939276">
+                        <i class="fa-brands fa-whatsapp me-2"></i>+51 984 939 276
+                    </a>
+                </div>
+            </div>
         </div>
-        
-          
-        
-      
-      
-    </nav>
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-light p-4">
-      <!--  <h5 class="text-white h4">Collapsed content</h5> -->
-        <ul class="navbar-nav justify-content-center" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a  class="nav-linkwhite " aria-current="page" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite " href="../traditionaltours.html">Traditional Tours</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite " href="../adventuretours.html">Adventure Tours</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite " href="../perudestinations.html">Peru Destinations</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite" href="../touristcircuit.html">Tourist Circuits of Cusco</a>
-          </li>         
-          <li class="nav-item">
-            <a class="nav-linkwhite " href="../folklorefeast.html">Folklore Tours</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-linkwhite" href="../spanish-school.html">Spanish School</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-linkwhite" href="../social-programs.html">Social Programs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-linkwhite" href="mostrar_articulos.php">Blog</a>
-          </li>
-         <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Link
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          -->
-        </ul>
-      </div>
     </div>
-   
-  </header>
-    <header  class="container navmenu" id="head">
-       <div class="row justify-content-center g-0" id="superiorhead">
-                <div class="col-4 text-center">                 
-                    <p id="mail" class="datahead">  <i class="fa-solid fa-envelope"> </i> latinotourscusco@hotmail.com </p>
-                </div>
-                <div class="col-4 text-center">
-                    <img id="primarylogo" src="/img/logo.png" alt="Latino Tours">
-                </div>
-                <div class="col-4 text-center">   
-                  <a href="tel:+51984939276" class="datahead">              
-                   <p id="phone" class="datahead"> <i class="fa-brands fa-whatsapp"></i> +51 984 939 276 </p>
-                  </a>
-                </div>
-       </div> 
-       <div class="row g-0">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid justify-content-center">
-                <div class="row ">
-                 
-                    <div class="col-12 text-center">
-                    
-                          <div class="collapse navbar-collapse" id="navbarScroll">
-                            <ul class="navbar-nav justify-content-center  navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                              <li class="nav-item">
-                                <a id="linkmenu1" class="nav-link " aria-current="page" href="../index.html">Home</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu2" class="nav-link " href="../traditionaltours.html">Traditional Tours</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu3" class="nav-link " href="../adventuretours.html">Adventure Tours</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu4" class="nav-link " href="../perudestinations.html">Peru Destinations</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu5" class="nav-link " href="../touristcircuit.html">Tourist Circuits of Cusco</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu7" class="nav-link " href="../folklorefeast.html">Folklore Tours</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu6" class="nav-link " href="../spanish-school.html">Spanish School</a>
-                              </li>
-                              
-                              <li class="nav-item">
-                                <a id="linkmenu8" class="nav-link " href="../social-programs.html">Social Programs</a>
-                              </li>
-                              <li class="nav-item">
-                                <a id="linkmenu9" class="nav-link " href="mostrar_articulos.php">Blog</a>
-                              </li>
-                             <!-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Link
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                  <li><a class="dropdown-item" href="#">Action</a></li>
-                                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                              </li>
-                              -->
-                            </ul>
-                           
-                          </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light sticky-top shadow-sm py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Latino Tours Cusco">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../traditionaltours.html">Traditional Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../adventuretours.html">Adventure Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../perudestinations.html">Perú Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../touristcircuit.html">Tourist Circuits of Cusco</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../folklorefeast.html">Folklore Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../spanish-school.html">Spanish School</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../social-programs.html">Social Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/backend/mostrar_articulos.php">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <header>
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="img/header-1-machupicchu.jpg" alt="Machu Picchu Tours">
+                    <div class="carousel-caption">
+                        <h5>Machu Picchu Tours</h5>
+                        <p class="d-none d-md-block">The best and safest way to discover Machu Picchu. Enjoy our 1-day tour at your own pace.</p>
                     </div>
                 </div>
-             
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="img/header-2-rainbow-mountains.jpg" alt="Rainbow Mountains">
+                    <div class="carousel-caption">
+                        <h5>Rainbow Mountains</h5>
+                        <p class="d-none d-md-block">Hike through a vibrant green valley with magnificent views of snow-capped mountains.</p>
+                    </div>
+                </div>
+
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img src="img/header-3-moray.jpg" alt="Maras Moray">
+                    <div class="carousel-caption">
+                        <h5>MORAY PERÚ TOUR</h5>
+                        <p class="d-none d-md-block">This half day tour experience to Moray & Salt Mines, will take you off the beaten track to enjoy the stunning scenery of snow-capped mountains of the Andes.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="img/header-4-humantay.jpg" alt="Humantay Lake">
+                    <div class="carousel-caption">
+                        <h5>HUMANTAY LAKE</h5>
+                        <p class="d-none d-md-block">Humantay Lake Tour offers high altitude ecotourism in the mountains, in complicity with nature, witness this new experience in the Andes.</p>
+                    </div>
+                </div>
+
+                
             </div>
-          </nav>
-       </div>    
-    </header>    
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
     
     <section class="container pt-8" >
       <div class="row justify-content-center g-0 text-center">
         <h1 class="title">Welcome to our blog</h1>
-        <h4 id="slogan1" class="mb-5">"The best articles and information about the land of the incas."</h4>
+        <h4 id="text-success" class="mb-5">"The best articles and information about the land of the incas."</h4>
       </div>
     </section>
     <section class="container-fluid" id="populartours">
