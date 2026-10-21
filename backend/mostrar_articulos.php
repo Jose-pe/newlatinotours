@@ -279,12 +279,12 @@
             echo '<div class="col-4 colcard">';
             echo '<div class="row justify-content-center">';
             echo '<a href="mostrar_articulo.php?slug='. $post["slug"] . '">';
-            echo '<div class="card shadow mb-5 bg-body rounded cardtours" style="width: 28rem;">';
-            echo '<div class="img-contenedor-blog">';
+            echo '<div class="card shadow mb-5 bg-body rounded tour-card">';
+            echo '<div class="img-wrapper">';
             echo '<img  width="100%" height="300" src="'. $post["image_one"] .'" class="card-img-top" alt="...">';
             echo '</div>';
             echo '<div class="card-body">';
-            echo '<h5 class="card-title titlecard text-truncate">'. $post["titulo"] .'</h5>';
+            echo '<h5 class="card-title text-truncate">'. $post["titulo"] .'</h5>';
             echo '<p class="card-text textcard text-truncate">'.$post["descripcion_corta"].'</p>';
             echo '<p class="card-text textstrong">Tags: ' .$post["tags"].'</p>';
             echo '</div>';
