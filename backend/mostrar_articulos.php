@@ -276,17 +276,17 @@
 
         while ($post = $result->fetch_assoc()) {
        
-            echo '<div class="col-4 colcard">';
+            echo '<div class="col-4 col-sm-6 col-md-3 col-lg-2 mb-4">';
             echo '<div class="row justify-content-center">';
-            echo '<a href="mostrar_articulo.php?slug='. $post["slug"] . '">';
+            echo '<a href="mostrar_articulo.php?slug='. $post["slug"] . '" style="text-decoration: none; color: inherit;">';
             echo '<div class="card shadow mb-5 bg-body rounded tour-card">';
             echo '<div class="img-wrapper">';
-            echo '<img  width="100%" height="300" src="'. $post["image_one"] .'" class="card-img-top" alt="...">';
+            echo '<img src="'. $post["image_one"] .'" alt="' .$post["tags"].'">';
             echo '</div>';
             echo '<div class="card-body">';
-            echo '<h5 class="card-title text-truncate">'. $post["titulo"] .'</h5>';
+            echo '<h5 class="card-title text-success">'. $post["titulo"] .'</h5>';
             echo '<p class="card-text textcard text-truncate">'.$post["descripcion_corta"].'</p>';
-            echo '<p class="card-text textstrong">Tags: ' .$post["tags"].'</p>';
+            echo '<p class="card-text" style="font-size:small ;font-weight:bolder; color:orange;">Tags: ' .$post["tags"].'</p>';
             echo '</div>';
             echo '</div>';
             echo '</a>';
