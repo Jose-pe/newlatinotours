@@ -154,6 +154,7 @@
             background-color: #212529;
             color: #bbb;
             padding: 40px 0 20px;
+            margin-top: 60px;
         }
         footer .icons {
             color: #fff;

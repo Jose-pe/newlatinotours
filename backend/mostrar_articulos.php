@@ -319,7 +319,7 @@
 
 
     <!-- Footer -->
-    <footer class="text-center">
+    <footer class="text-center mt-5">
         <div class="container">
             <div class="row justify-content-center mb-4">
                 <div class="col-md-6">
