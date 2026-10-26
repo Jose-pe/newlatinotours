@@ -265,35 +265,43 @@
     <section class="container-fluid" id="populartours">
       <div class="row justify-content-center g-0 text-center p-3" id="firstrowpopular">        
           
-    <?php
+   <?php
+    require 'conexion_sql.php';
+    
+    $sql = "SELECT * FROM posts WHERE estado = 'publicado' ORDER BY created_at DESC";
+    $result = $conn->query($sql);
 
-        require 'conexion_sql.php';
-        $sql = "SELECT * FROM posts         
-        WHERE estado = 'publicado'
-        ORDER BY created_at DESC";
-
-        $result = $conn->query($sql);
-
-        while ($post = $result->fetch_assoc()) {
-       
-            echo '<div class="col-4 col-sm-6 col-md-3 col-lg-2 mb-4">';
-            echo '<div class="row justify-content-center">';
-            echo '<a href="mostrar_articulo.php?slug='. $post["slug"] . '" style="text-decoration: none; color: inherit;">';
-            echo '<div class="card shadow mb-5 bg-body rounded tour-card">';
-            echo '<div class="img-wrapper">';
-            echo '<img src="'. $post["image_one"] .'" alt="' .$post["tags"].'">';
-            echo '</div>';
-            echo '<div class="card-body">';
-            echo '<h5 class="card-title text-success">'. $post["titulo"] .'</h5>';
-            echo '<p class="card-text textcard text-truncate">'.$post["descripcion_corta"].'</p>';
-            echo '<p class="card-text" style="font-size:small ;font-weight:bolder; color:orange;">Tags: ' .$post["tags"].'</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</a>';
-            echo '</div>';
-            echo '</div>';
-        }
-    ?>
+    if ($result && $result->num_rows > 0):
+        while ($post = $result->fetch_assoc()): 
+?>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <a href="mostrar_articulo.php?slug=<?php echo urlencode($post['slug']); ?>" class="text-decoration-none text-inherit">
+                    <div class="card shadow-sm border-0 rounded-4 h-100 tour-card overflow-hidden">
+                        <div class="img-wrapper" style="height: 200px; overflow: hidden;">
+                            <img src="<?php echo htmlspecialchars($post['image_one'], ENT_QUOTES, 'UTF-8'); ?>" 
+                                 class="w-100 h-100 object-fit-cover" 
+                                 alt="<?php echo htmlspecialchars($post['tags'], ENT_QUOTES, 'UTF-8'); ?>">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success fw-bold fs-6 mb-2">
+                                <?php echo htmlspecialchars($post['titulo'], ENT_QUOTES, 'UTF-8'); ?>
+                            </h5>
+                            <p class="card-text text-muted small text-truncate mb-3">
+                                <?php echo htmlspecialchars($post['descripcion_corta'], ENT_QUOTES, 'UTF-8'); ?>
+                            </p>
+                            <p class="card-text mt-auto mb-0" style="font-size: 0.8rem; font-weight: 700; color: orange;">
+                                Tags: <?php echo htmlspecialchars($post['tags'], ENT_QUOTES, 'UTF-8'); ?>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+<?php 
+        endwhile; 
+    else:
+        echo '<div class="col-12 text-center py-4"><p class="text-muted">No posts available at the moment.</p></div>';
+    endif; 
+?>
 
       </div>
       </div>

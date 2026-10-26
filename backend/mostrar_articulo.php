@@ -262,85 +262,105 @@
    
     <section class="container-fluid pt-5" id="traditionaltours">
       
-         <?php
-            require 'conexion_sql.php';
-            //$slug = 'hola-33332dddsdsds';
-            $slug = $_GET['slug'];
-
-            $stmt = $conn->prepare("SELECT * FROM posts WHERE slug = ? AND estado = 'publicado'");
-            $stmt->bind_param("s", $slug);
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            if ($result->num_rows) {
-                $post = $result->fetch_assoc();
-              
-        echo '     <div class="row justify-content-center g-0 text-center" id="firstrowpopular">';
-        echo   '<h2 class="primarytitle">'.$post["titulo"].'</h2>';
-        echo   ' <div class="row justify-content-center rowicons">';
-        echo   '  <div class="col-2 colicons">';
-        
-        echo   '      <p><i class="fa-solid fa-user" style="color: #000000;"></i> Francisco Astete</p>';
-        echo   '  </div>';
-        echo   '  <div class="col-2 colicons">';
-        echo   '        <p> <i class="fa-solid fa-map-location"></i> Cusco</p>';
-        echo   '  </div>';
-        //echo   '  <div class="col-2 colicons">';
-       // echo   '       <p> <i class="fa-solid fa-users-line"></i> 5 - 10 people</p>';
-       //  echo   '  </div>';
-        
-        echo   '   <hr>';
-        echo   ' </div>';
-       echo   '  <div class="row justify-content-center flexrow2">';
-       echo   '    <div class="col-10 text-start p-5 flexcol2">';
-            echo   '     <p class="textsecundary">';
-       echo   ''.$post["descripcion_corta"].' </p>';
-       echo   '     <div style="white-space: pre-wrap;"><p class="textsecundary" style="white-space: pre-wrap;">';
-       echo   ''.$post["cuerpo_articulo"].' </p> </div>';
-      
-        echo   '  </div>      ';
-       echo   ' </div>';
-   echo   '   </div>';
-
-      
-
-     
+       <?php
+    require 'conexion_sql.php';
     
-     
-    echo   '</section>';
+    // Validar que el slug exista en la URL
+    $slug = isset($_GET['slug']) ? $_GET['slug'] : '';
 
-    echo   '<section class="container-fluid" id="ourexperience">';
-     
-     echo   ' <div class="row justify-content-center text-center" id="ourexperienceone" >';
-     echo   '   <h2 class="primarytitle">Gallery</h2>';
-    echo   '    <div class="col-4 justify-content-center colbanners" id="imgcontent">';
-   echo   '       <div class="img-contenedor">';
-   echo   '         <img src="'.$post["image_one"].'" class="img-fluid imgexperience" alt="Cusco Traditional tour">';
+    $stmt = $conn->prepare("SELECT * FROM posts WHERE slug = ? AND estado = 'publicado'");
+    $stmt->bind_param("s", $slug);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-   echo   '       </div>';
-          
-   echo   '     </div>';
-   echo   '     <div class="col-4 justify-content-center colbanners"  id="imgcontent">';
-   echo   '       <div class="img-contenedor">';
-   echo   '       <img src="'.$post["image_two"].'" class="img-fluid imgexperience" alt="inca trail">';
-        
-   echo   '       </div>';
-  echo   '      </div>';
-echo   '        <div class="col-4 justify-content-center colbanners"  id="imgcontent">';
-  echo   '        <div class="img-contenedor">';
-  echo   '        <img src="'.$post["image_three"].'" class="img-fluid imgexperience" alt="Machu Picchu Treks">';
-          
-  echo   '        </div>';
-  echo   '      </div>    ';
-  echo   '    </div>';
+    if ($result->num_rows > 0):
+        $post = $result->fetch_assoc();
+?>
+    <section class="container py-5">
+        <div class="row justify-content-center g-0 text-center" id="firstrowpopular">
+            <h2 class="primarytitle mb-4">
+                <?php echo htmlspecialchars($post["titulo"], ENT_QUOTES, 'UTF-8'); ?>
+            </h2>
+            
+            <div class="row justify-content-center rowicons mb-4">
+                <div class="col-auto colicons px-3">
+                    <p class="mb-0"><i class="fa-solid fa-user me-1" style="color: #000000;"></i> Francisco Astete</p>
+                </div>
+                <div class="col-auto colicons px-3">
+                    <p class="mb-0"><i class="fa-solid fa-map-location me-1"></i> Cusco</p>
+                </div>
+            </div>
+            <hr class="w-75 mx-auto">
 
+            <div class="row justify-content-center flexrow2 mt-4">
+                <div class="col-10 text-start p-4 p-md-5 flexcol2 bg-white rounded-4 shadow-sm">
+                    <p class="textsecundary fw-semibold fs-5 mb-4 text-secondary">
+                        <?php echo htmlspecialchars($post["descripcion_corta"], ENT_QUOTES, 'UTF-8'); ?>
+                    </p>
+                    <div style="white-space: pre-wrap;">
+                        <p class="textsecundary lh-lg" style="white-space: pre-wrap;">
+                            <?php echo htmlspecialchars($post["cuerpo_articulo"], ENT_QUOTES, 'UTF-8'); ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="container-fluid py-4" id="ourexperience">
+        <div class="row justify-content-center text-center mb-4" id="ourexperienceone">
+            <h2 class="primarytitle mb-4">Gallery</h2>
+            
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center px-md-5">
+                <?php if (!empty($post["image_one"])): ?>
+                <div class="col colbanners">
+                    <div class="card gallery-card shadow-sm border-0 rounded-4 overflow-hidden h-100">
+                        <div class="img-contenedor" style="height: 250px; overflow: hidden;">
+                            <img src="<?php echo htmlspecialchars($post["image_one"], ENT_QUOTES, 'UTF-8'); ?>" 
+                                 class="img-fluid imgexperience w-100 h-100 object-fit-cover" 
+                                 alt="<?php echo htmlspecialchars($post["titulo"], ENT_QUOTES, 'UTF-8'); ?> - Image 1">
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
 
+                <?php if (!empty($post["image_two"])): ?>
+                <div class="col colbanners">
+                    <div class="card gallery-card shadow-sm border-0 rounded-4 overflow-hidden h-100">
+                        <div class="img-contenedor" style="height: 250px; overflow: hidden;">
+                            <img src="<?php echo htmlspecialchars($post["image_two"], ENT_QUOTES, 'UTF-8'); ?>" 
+                                 class="img-fluid imgexperience w-100 h-100 object-fit-cover" 
+                                 alt="<?php echo htmlspecialchars($post["titulo"], ENT_QUOTES, 'UTF-8'); ?> - Image 2">
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
 
-            } else {
-                echo "Post no encontrado";
-            }
-    ?>
+                <?php if (!empty($post["image_three"])): ?>
+                <div class="col colbanners">
+                    <div class="card gallery-card shadow-sm border-0 rounded-4 overflow-hidden h-100">
+                        <div class="img-contenedor" style="height: 250px; overflow: hidden;">
+                            <img src="<?php echo htmlspecialchars($post["image_three"], ENT_QUOTES, 'UTF-8'); ?>" 
+                                 class="img-fluid imgexperience w-100 h-100 object-fit-cover" 
+                                 alt="<?php echo htmlspecialchars($post["titulo"], ENT_QUOTES, 'UTF-8'); ?> - Image 3">
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+<?php 
+    else: 
+?>
+    <div class="container text-center py-5">
+        <h3 class="text-danger">Post no encontrado</h3>
+        <p class="text-muted">El artículo que buscas no existe o no se encuentra disponible.</p>
+        <a href="index.html" class="btn btn-warning mt-3 text-white fw-bold">Volver al Inicio</a>
+    </div>
+<?php 
+    endif; 
+?>
     </section>
 
 
