@@ -87,7 +87,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== "FranciscoLatino01") {
             <div class="col-lg-10">
                 
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h2 class="fw-bold text-dark m-0"><i class="fa-solid fa-newspaper text-warning me-2"></i> Artículos Publicados</h2>
+                    <h2 class="fw-bold text-dark m-0"><i class="fa-solid fa-newspaper text-warning me-2"></i> Gestión de Artículos</h2>
                 </div>
 
                 <!-- Tabla de Artículos en Tarjeta -->
@@ -99,35 +99,53 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== "FranciscoLatino01") {
                                     <th scope="col" class="py-3">#ID</th>
                                     <th scope="col" class="py-3">Título</th>
                                     <th scope="col" class="py-3">Estado</th>
-                                    <th scope="col" class="py-3 text-end">Acción</th>
+                                    <th scope="col" class="py-3 text-end">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
                                 require 'conexion_sql.php';
 
-                                $sql = "SELECT id, titulo, estado FROM posts WHERE estado = 'publicado' ORDER BY created_at DESC";
+                                // Listamos todos los artículos ordenados por fecha (eliminamos el filtro estricto de 'publicado')
+                                $sql = "SELECT id, titulo, estado FROM posts ORDER BY created_at DESC";
                                 $result = $conn->query($sql);
 
                                 if ($result && $result->num_rows > 0):
                                     while ($post = $result->fetch_assoc()): 
+                                        $esPublicado = ($post["estado"] === 'publicado');
                                 ?>
                                         <tr>
                                             <th scope="row" class="fw-semibold text-muted">#<?php echo $post["id"]; ?></th>
                                             <td class="fw-semibold text-dark"><?php echo htmlspecialchars($post["titulo"], ENT_QUOTES, 'UTF-8'); ?></td>
                                             <td>
-                                                <span class="badge bg-success bg-opacity-15 text-white px-3 py-2 rounded-pill fw-semibold">
-                                                    <?php echo htmlspecialchars($post["estado"], ENT_QUOTES, 'UTF-8'); ?>
-                                                </span>
+                                                <?php if ($esPublicado): ?>
+                                                    <span class="badge bg-success bg-opacity-15 text-white px-3 py-2 rounded-pill fw-semibold">
+                                                        Publicado
+                                                    </span>
+                                                <?php else: ?>
+                                                    <span class="badge bg-secondary bg-opacity-15 text-white px-3 py-2 rounded-pill fw-semibold">
+                                                        Borrador
+                                                    </span>
+                                                <?php endif; ?>
                                             </td>
-                                          
-                                             <td class="text-end">
-                                                <a href="editar_articulo.php?id=<?php echo $post["id"]; ?>" class="btn btn-outline-warning btn-sm px-3 rounded-pill fw-semibold me-1">
+                                            <td class="text-end">
+                                                <!-- Botón para cambiar estado dinámicamente -->
+                                                <a href="cambiar_estado.php?id=<?php echo $post["id"]; ?>" 
+                                                   class="btn btn-outline-secondary btn-sm px-3 rounded-pill fw-semibold me-1"
+                                                   title="Cambiar estado">
+                                                    <i class="fa-solid fa-rotate me-1"></i> <?php echo $esPublicado ? 'Hacer Borrador' : 'Publicar'; ?>
+                                                </a>
+                                                
+                                                <!-- Botón Editar -->
+                                                <a href="editar_articulo.php?id=<?php echo $post["id"]; ?>" 
+                                                   class="btn btn-outline-warning btn-sm px-3 rounded-pill fw-semibold me-1">
                                                     <i class="fa-solid fa-pen-to-square me-1"></i> Editar
                                                 </a>
+
+                                                <!-- Botón Eliminar -->
                                                 <a href="eliminar_articulo.php?id=<?php echo $post["id"]; ?>" 
-                                                class="btn btn-outline-danger btn-sm px-3 rounded-pill fw-semibold"
-                                                onclick="return confirm('¿Estás seguro de que deseas eliminar este artículo?');">
+                                                   class="btn btn-outline-danger btn-sm px-3 rounded-pill fw-semibold"
+                                                   onclick="return confirm('¿Estás seguro de que deseas eliminar este artículo?');">
                                                     <i class="fa-solid fa-trash-can me-1"></i> Eliminar
                                                 </a>
                                             </td>
@@ -137,7 +155,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== "FranciscoLatino01") {
                                 else:
                                 ?>
                                     <tr>
-                                        <td colspan="4" class="text-center py-4 text-muted">No hay artículos publicados por el momento.</td>
+                                        <td colspan="4" class="text-center py-4 text-muted">No hay artículos registrados por el momento.</td>
                                     </tr>
                                 <?php 
                                 endif; 

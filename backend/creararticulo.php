@@ -104,7 +104,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] !== "FranciscoLatino01") {
                 </div>
 
                 <!-- Formulario conectado a tu script PHP (guardar_articulo.php) -->
-                <form action="guardar_articulo.php" method="POST" enctype="multipart/form-data" class="admin-card p-4 p-md-5">
+                <form action="crear_articulo.php" method="POST" enctype="multipart/form-data" class="admin-card p-4 p-md-5">
                     
                     <!-- Sección 1: Información General -->
                     <div class="mb-4">

@@ -274,7 +274,7 @@
     if ($result && $result->num_rows > 0):
         while ($post = $result->fetch_assoc()): 
 ?>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 m-4 ">
                 <a href="mostrar_articulo.php?slug=<?php echo urlencode($post['slug']); ?>" class="text-decoration-none text-inherit">
                     <div class="card shadow-sm border-0 rounded-4 h-100 tour-card overflow-hidden">
                         <div class="img-wrapper" style="height: 200px; overflow: hidden;">

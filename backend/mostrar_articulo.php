@@ -282,7 +282,7 @@
                 <?php echo htmlspecialchars($post["titulo"], ENT_QUOTES, 'UTF-8'); ?>
             </h2>
             
-            <div class="row justify-content-center rowicons mb-4">
+            <div class="row justify-content-evenly rowicons mb-4">
                 <div class="col-auto colicons px-3">
                     <p class="mb-0"><i class="fa-solid fa-user me-1" style="color: #000000;"></i> Francisco Astete</p>
                 </div>
@@ -292,11 +292,9 @@
             </div>
             <hr class="w-75 mx-auto">
 
-            <div class="row justify-content-center flexrow2 mt-4">
-                <div class="col-10 text-start p-4 p-md-5 flexcol2 bg-white rounded-4 shadow-sm">
-                    <p class="textsecundary fw-semibold fs-5 mb-4 text-secondary">
-                        <?php echo htmlspecialchars($post["descripcion_corta"], ENT_QUOTES, 'UTF-8'); ?>
-                    </p>
+            <div class="row justify-content-center flexrow2 mt-1">
+                <div class="col-10 text-start pr-2 pl-2 pb-2 pt-1 p-md-5 flexcol2 bg-white rounded-4 shadow-sm">
+                   
                     <div style="white-space: pre-wrap;">
                         <p class="textsecundary lh-lg" style="white-space: pre-wrap;">
                             <?php echo htmlspecialchars($post["cuerpo_articulo"], ENT_QUOTES, 'UTF-8'); ?>
