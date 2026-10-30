@@ -26,6 +26,11 @@
             color: var(--text-color);
             background-color: #f8f9fa;
         }
+
+        .tags{
+            color: var(--primary-color);
+            font-size: 1rem;            
+        }
         /* Top Bar */
         .top-bar {
             background-color: #212529;
@@ -296,10 +301,15 @@
                 <div class="col-10 text-start pr-2 pl-2 pb-2 pt-1 p-md-5 flexcol2 bg-white rounded-4 shadow-sm">
                    
                     <div style="white-space: pre-wrap;">
-                        <p class="textsecundary lh-lg" style="white-space: pre-wrap;">
+                        <p class="textsecundary lh-lg mb-5" style="white-space: pre-wrap;">
                             <?php echo htmlspecialchars($post["cuerpo_articulo"], ENT_QUOTES, 'UTF-8'); ?>
                         </p>
+                        
                     </div>
+                    <hr>
+                        <p class="tags">
+                           TAGS:  <?php echo htmlspecialchars($post["tags"], ENT_QUOTES, 'UTF-8'); ?>
+                        </p>
                 </div>
             </div>
         </div>
